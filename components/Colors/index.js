@@ -5,7 +5,8 @@ export const color = {
     TAB_BG: "#333",
     ACTIVE_TAB_BG: "#555",
     PLAYER_CONTROL_CARD_BG: 'rgba(125, 74, 219, .6)',
-    AUDIO_PROGRESS_BG: 'rgba(26, 3, 196, .4)',
+    AUDIO_PROGRESS_BG_MIN: 'rgba(125, 7, 188, 1)',
+    AUDIO_PROGRESS_BG_MAX: 'rgba(125, 134, 267, 1)',
     AUDIO_PROGRESS_BALL_BG: 'rgba(125, 7, 188, 1)',
     SKIP_FORWARD_BTN: "#888",
     PLAY_PAUSE_BTN: "#777"

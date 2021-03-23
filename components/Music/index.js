@@ -23,12 +23,12 @@ const getThumbText = (filename) => filename[0].toUpperCase();
 
 export default function Music() {
     
-    const { audioTotalCount, getNextPage } = useContext(AudioContext)
+    const { audioTotalCount, getNextPage, handleAudioPress } = useContext(AudioContext)
     const [ refreshing, setRefreshing ] = useState(false);
     const [ audioFiles, setAudioFiles ] = useState([])
     const [ totalItems, setTotalItems ] = useState(audioTotalCount)
     const [ scrollingDown, setScrollingDown ] = useState(false)
-    
+
     const [modal, setModal] = useState(false);
     const [modalData, setModalData] = useState({})
 
@@ -92,7 +92,11 @@ export default function Music() {
                 }}
             >
                 {audioFiles && audioFiles.map(audio => 
-                    <TouchableOpacity activeOpacity={0.7} key={audio.id}>
+                    <TouchableOpacity
+                        activeOpacity={0.7}
+                        key={audio.id}
+                        onPress={() => handleAudioPress(audio)}
+                    >
                         <View style={styles.musicItems}>
                             <Text style={styles.musicItemThumb}>{getThumbText(audio.filename)}</Text>
                             <View style={styles.musicInfoMiddle}>

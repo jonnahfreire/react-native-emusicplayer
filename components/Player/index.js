@@ -5,8 +5,10 @@ import {
     Text,
     StyleSheet,
     StatusBar,
-    TouchableOpacity
+    TouchableOpacity,
 } from 'react-native';
+
+import Slider from '@react-native-community/slider';
 
 import { color } from '../Colors';
 
@@ -35,11 +37,15 @@ export default function Player() {
                             <Text style={styles.audioTime}>07:54</Text>
                         </View>
 
-                        <View style={styles.audioBar}>
-                            <View style={{...styles.audioProgress, width: '40%'}}>
-                                <View style={styles.audioProgressBall}></View>
-                            </View>
-                        </View>
+                        <Slider
+                            style={styles.sliderStyle}
+                            minimumValue={0}
+                            maximumValue={1}
+                            minimumTrackTintColor={color.AUDIO_PROGRESS_BG_MIN}
+                            maximumTrackTintColor={color.AUDIO_PROGRESS_BG_MAX}
+                            thumbTintColor={color.AUDIO_PROGRESS_BALL_BG}
+                            onSlidingComplete={ value => console.log(value) }
+                        />
                     </View>
 
                     <View style={styles.playerControlButtons}>
@@ -130,7 +136,7 @@ const styles = StyleSheet.create({
         borderBottomRightRadius: 25,
     },
     audioTitle: {
-        width: '90%',
+        width: '88%',
         fontSize: 25,
         padding: 5,
         color: '#FFF',
@@ -141,7 +147,7 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         alignItems: 'center',
         justifyContent: 'space-between',
-        width: '90%',
+        width: '86%',
         marginBottom: 10
     },
     audioTime: {
@@ -157,34 +163,17 @@ const styles = StyleSheet.create({
         borderBottomLeftRadius: 25,
         borderBottomRightRadius: 25,
     },
-    audioProgress: {
-        width: '25%',
-        height: '100%',
-        backgroundColor: color.AUDIO_PROGRESS_BG,
-        borderTopLeftRadius: 25,
-        borderTopRightRadius: 25,
-        borderBottomLeftRadius: 25,
-        borderBottomRightRadius: 25,
-        elevation: 3,
-        shadowColor: "#fff",
+    sliderStyle: {
+        width: '95%',
+        height: 40,
     },
-    audioProgressBall: {
-        backgroundColor: color.AUDIO_PROGRESS_BALL_BG,
-        position: 'relative',
-        top: -5,
-        alignSelf: 'flex-end',
-        height: 15,
-        width: 15,
-        borderRadius: 50,
-        elevation: 5,
-        zIndex: 99
-    },
+  
     playerControlInfo: {
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
         width: '100%',
-        height: 100,
+        height: 120,
     },
     playerControlButtons: {
         display: 'flex',
@@ -193,7 +182,6 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         alignSelf: 'center',
         justifyContent: 'center',
-        marginTop: 20,
         padding: 5,
     },
     skipForwardButton: {   
