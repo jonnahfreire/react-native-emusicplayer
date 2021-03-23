@@ -5,7 +5,7 @@ import { Alert } from 'react-native';
 
 import * as MediaLibrary from 'expo-media-library';
 
-export const AudioContext = createContext()
+export const AudioContext = createContext();
 
 export default function AudioProvider(props) {
     
@@ -25,7 +25,6 @@ export default function AudioProvider(props) {
             }]
         )
     }
-
 
     const getNextPage = (start, end) => {
         return audioFiles.slice(start, end)
@@ -51,7 +50,7 @@ export default function AudioProvider(props) {
             // Get all the audio files
             getAudioFiles()
         }
-
+        
         if(!permission.granted && permission.canAskAgain) {
             const { status, canAskAgain } = await MediaLibrary.requestPermissionsAsync();
 

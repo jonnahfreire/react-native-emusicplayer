@@ -12,7 +12,6 @@ import { color } from '../Colors';
 
 import { Ionicons } from '@expo/vector-icons';
 
-
 export default function Player() {
     const [ isPlaying, setIsPlaying ] = useState(false);
 
@@ -167,7 +166,7 @@ const styles = StyleSheet.create({
         borderBottomLeftRadius: 25,
         borderBottomRightRadius: 25,
         elevation: 3,
-        shadowColor: "#FFF",
+        shadowColor: "#fff",
     },
     audioProgressBall: {
         backgroundColor: color.AUDIO_PROGRESS_BALL_BG,

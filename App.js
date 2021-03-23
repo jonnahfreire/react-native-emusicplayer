@@ -10,16 +10,16 @@ export default function App() {
 
   return (
     <View style={styles.container}>
-    <AudioProvider>
-      <AppTabs />
-    </AudioProvider>
+      <AudioProvider>
+        <AppTabs />
+      </AudioProvider>
     </View>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
-      flex: 1,
-      backgroundColor: color.SCREEN_BG,
+    flex: 1,
+    backgroundColor: color.SCREEN_BG,
   },
 })
