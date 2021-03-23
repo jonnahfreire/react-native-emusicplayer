@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useContext } from 'react';
+import React from 'react';
 import { StyleSheet, View } from 'react-native';
 
 import AppTabs from './components/AppTab';
@@ -15,6 +15,7 @@ export default function App() {
       </AudioProvider>
     </View>
   );
+  
 }
 
 const styles = StyleSheet.create({
